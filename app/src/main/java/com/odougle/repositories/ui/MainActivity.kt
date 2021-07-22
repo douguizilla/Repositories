@@ -1,7 +1,8 @@
-package com.odougle.repositories
+package com.odougle.repositories.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.odougle.repositories.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
