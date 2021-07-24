@@ -2,6 +2,8 @@ package com.odougle.repositories.data.di
 
 import android.util.Log
 import com.google.gson.GsonBuilder
+import com.odougle.repositories.data.repositories.RepoRepository
+import com.odougle.repositories.data.repositories.RepoRepositoryImpl
 import com.odougle.repositories.data.services.GitHubService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -16,7 +18,7 @@ object DataModule {
     private const val OK_HTTP = "OkHttp"
 
     fun load(){
-        loadKoinModules(networkModules())
+        loadKoinModules(networkModules() + repositoriesModule())
     }
 
     private fun networkModules() : Module{
@@ -45,6 +47,12 @@ object DataModule {
                 createService<GitHubService>(get(), get())
             }
 
+        }
+    }
+
+    private fun repositoriesModule(): Module {
+        return module {
+            single <RepoRepository> { RepoRepositoryImpl(get())}
         }
     }
 
