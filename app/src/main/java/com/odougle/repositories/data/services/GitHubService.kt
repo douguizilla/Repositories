@@ -1,5 +1,6 @@
 package com.odougle.repositories.data.services
 
+import com.odougle.repositories.data.model.Repo
 import retrofit2.http.GET
 import retrofit2.http.Path
 
