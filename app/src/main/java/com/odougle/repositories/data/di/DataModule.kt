@@ -2,6 +2,7 @@ package com.odougle.repositories.data.di
 
 import android.util.Log
 import com.google.gson.GsonBuilder
+import com.odougle.repositories.data.services.GitHubService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.core.module.Module
@@ -17,6 +18,7 @@ object DataModule {
         return module {
         //always will be the same instance
 
+            //Cliente
             single {
                 val interceptor = HttpLoggingInterceptor {
                     Log.e(OK_HTTP, it)
@@ -28,19 +30,24 @@ object DataModule {
                     .build()
             }
 
-            //How will convert Json
+            //Factory to convert Json
             single {
                 GsonConverterFactory.create(GsonBuilder().create())
             }
 
-
+            //Service
+            single {
+                createService<GitHubService>(get(), get())
+            }
 
         }
     }
 
-    private inline fun <reified  T> createServices() : T{
+    private inline fun <reified  T> createService(client: OkHttpClient, factory: GsonConverterFactory) : T{
         return Retrofit.Builder()
             .baseUrl("https://api.github.com/")
+            .client(client)
+            .addConverterFactory(factory)
             .build()
             .create(T::class.java)
     }
