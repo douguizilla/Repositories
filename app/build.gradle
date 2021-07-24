@@ -21,10 +21,6 @@ android {
         viewBinding = true
     }
 
-    dataBinding{
-        enabled = true
-    }
-
     buildTypes {
         release {
             minifyEnabled false
@@ -55,9 +51,9 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 
     //retrofit @see https://square.github.io/retrofit/
-    implementation "com.square.retrofit2:retrofit:$retrofit_version"
-    implementation "com.square.retrofit2:converter-gson:$retrofit_version"
-    implementation "com.square.retrofit2:loggin-interceptor:$retrofit_version"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:4.9.0"
 
     //koin @see https://insert-koin.io/docs/quickstart/android
     implementation "io.insert-koin:koin-android:$koin_version"
