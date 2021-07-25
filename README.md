@@ -19,12 +19,12 @@ Veja o aplicativo abaixo:
 
 - Antes de realizar a busca:
 
-  ![antesdabusca]()
+  ![antesdabusca](https://github.com/douguizilla/Repositories/blob/master/screenshots/antesDaBusca.png)
 
 - Carregando a busca por "douguizilla"
 
-  ![carregando]()
+  ![carregando](https://github.com/douguizilla/Repositories/blob/master/screenshots/carregandoBusca.png)
 
 - Resultado da busca:
 
-  ![resultado]()
+  ![resultado](https://github.com/douguizilla/Repositories/blob/master/screenshots/resultadoBusca.png)
