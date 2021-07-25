@@ -1,6 +1,6 @@
 # Repositories
 
-Este aplicativo foi desenvolvido com fins didáticos através das aulas vistas no [Inter Android Developer](https://web.digitalinnovation.one/track/inter-android-developer?tab=path). O aplicativo utiliza a API do GitHub para solicitar uma listagem de repositórios de um usuário através da busca e listar os repositórios em tela com a imagem do usuário, nome do repositório, linguagem utilizada e o número de estrelas que o repositório contém.
+Este aplicativo foi desenvolvido com fins didáticos através das aulas vistas no [Inter Android Developer](https://web.digitalinnovation.one/track/inter-android-developer?tab=path). O aplicativo utiliza a API do GitHub para solicitar uma listagem de repositórios de um usuário através da busca e lista os repositórios em tela com a imagem do usuário, nome do repositório, linguagem utilizada e o número de estrelas que o repositório contém.
 
 Com as aulas foram vistos conceitos como:
 
