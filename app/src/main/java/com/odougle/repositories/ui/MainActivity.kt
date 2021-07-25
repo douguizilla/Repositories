@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.Menu
 import androidx.appcompat.widget.SearchView
 import com.odougle.repositories.R
+import com.odougle.repositories.core.createDialog
 import com.odougle.repositories.core.createProgressDialog
 import com.odougle.repositories.core.hideSoftKeyboard
 import com.odougle.repositories.databinding.ActivityMainBinding
@@ -33,6 +34,9 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
             when (it) {
                 MainViewModel.State.Loading -> dialog.show()
                 is MainViewModel.State.Error -> {
+                    createDialog {
+                        setMessage(it.error.message)
+                    }
                     dialog.dismiss()
                 }
                 is MainViewModel.State.Sucess -> {
