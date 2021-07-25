@@ -8,12 +8,14 @@ import androidx.appcompat.widget.SearchView
 import com.odougle.repositories.R
 import com.odougle.repositories.databinding.ActivityMainBinding
 import com.odougle.repositories.presentation.MainViewModel
+import com.odougle.repositories.ui.adapter.RepoListAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
 
     private val viewModel by viewModel<MainViewModel>()
+    private val adapter by lazy { RepoListAdapter() }
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater)}
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,6 +23,8 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
         setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)
+
+        binding.rvRepos.adapter = adapter
 
         viewModel.repos.observe(this){
 
