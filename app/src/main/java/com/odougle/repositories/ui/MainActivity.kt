@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
                 is MainViewModel.State.Error -> {
                     createDialog {
                         setMessage(it.error.message)
-                    }
+                    }.show()
                     dialog.dismiss()
                 }
                 is MainViewModel.State.Sucess -> {
